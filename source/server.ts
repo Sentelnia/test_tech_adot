@@ -7,6 +7,7 @@ import logging from "./config/logging";
 import config from "./config/config";
 import impressionPubRoutes from "./routes/impressionPub";
 
+
 const NAMESPACE = "Server";
 
 const router = express();
@@ -60,6 +61,8 @@ router.use((req, res, next) => {
   });
 });
 
+
+
 //Create Server
 const httpServer = http.createServer(router);
 httpServer.listen(config.server.port, () =>
@@ -68,3 +71,5 @@ httpServer.listen(config.server.port, () =>
     `Server running on ${config.server.hostname}:${config.server.port}`
   )
 );
+
+export default { httpServer };
